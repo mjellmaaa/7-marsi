@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#section-1{
+    background-color: rgb(34, 50, 95);
+    height: 300px;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+header{
+    padding: 55px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-heading{
+    margin-top: 148px;
+}
