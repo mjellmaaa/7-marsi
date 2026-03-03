@@ -1,25 +1,173 @@
-body{
+
+body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+    background-color: #0a142f;
+    color: #f0f0f0;
 }
 
-#section-1{
-    background-color: rgb(34, 50, 95);
-    height: 300px;
-}
 
-.container{
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
-}
-
-header{
-    padding: 55px;
+.slide {
+    height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
 }
 
-.main-heading{
-    margin-top: 148px;
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.hero {
+    background: linear-gradient(to bottom, rgba(10,20,47,0.8), rgba(34,50,95,0.7)),
+                url("images/eminduraku.png");
+    background-size: cover;
+    background-position: center;
+    color: #c7caed;
+    text-shadow: 0 0 20px rgba(183, 190, 231, 0.8);
+}
+
+
+.slide:nth-of-type(2) {
+    background: linear-gradient(to right, rgba(10,20,47,0.7), rgba(34,50,95,0.6)),
+                url("images/shkolla.png");
+    background-size: cover;
+    background-position: center;
+    color: #fffacd;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+
+.row .image img, .slide img {
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    max-width: 100%;
+    transform: scale(0.95);
+    transition: transform 0.5s ease;
+}
+
+.row .image img:hover {
+    transform: scale(1);
+}
+
+
+.slide h1 {
+    font-size: 85px;
+    margin-bottom: 15px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(196, 198, 222, 0.8);
+}
+
+.slide h2 {
+    font-size: 50px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+.slide h3 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #beb5ded1;
+}
+
+
+.slide p {
+    font-size: 26px;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #f5f5f5;
+}
+
+
+.scroll-indicator {
+    font-size: 45px;
+    margin-top: 40px;
+    color: #bfb7e7d4;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+}
+
+
+.quote {
+    background: linear-gradient(to top, rgba(10,20,47,0.7), rgba(34,50,95,0.5)),
+                url("images/librat.png");
+    background-size: cover;
+    background-position: center;
+    font-style: italic;
+    font-size: 30px;
+    padding: 100px 50px;
+    text-align: center;
+    color: #bfc0efd1;
+    text-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+
+.slide a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.slide a:hover {
+    text-decoration: underline;
+    color: #0d5dc8;
+}
+
+
+.site-footer {
+    background-color: #1a2a5c;
+    color: #bfcaead7;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+
+@media(max-width: 900px) {
+    .row {
+        flex-direction: column;
+    }
+    .slide h1 { font-size: 65px; }
+    .slide h2 { font-size: 38px; }
+    .slide h3 { font-size: 26px; }
+    .slide p { font-size: 24px; }
+    .slide a { font-size: 22px; }
 }
